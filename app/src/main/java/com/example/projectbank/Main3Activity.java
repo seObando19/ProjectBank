@@ -36,9 +36,32 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                RegistroUsuario("http://172.18.85.89:81/ProjectBankSOP/registro.php");
+                validarRegistro();
             }
         });
+    }
+
+    private void validarRegistro() {
+        final String identE=ident.getText().toString();
+        final String nombE=nomb.getText().toString();
+        final String emailE=email.getText().toString();
+        final String passE=pass.getText().toString();
+
+        if(identE.isEmpty() || nombE.isEmpty() || emailE.isEmpty() || passE.isEmpty())
+        {
+            Toast.makeText(Main3Activity.this, "Campos obligatorios", Toast.LENGTH_SHORT).show();
+        }else
+            {
+                RegistroUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresa.php");
+                limpiarcampos();
+            }
+    }
+
+    private void limpiarcampos() {
+        ident.setText("");
+        nomb.setText("");
+        email.setText("");
+        pass.setText("");
     }
 
     private void RegistroUsuario(String s) {
@@ -55,6 +78,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Toast.makeText(Main3Activity.this, "Registro de usuario exitoso", Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         }, new Response.ErrorListener() {
