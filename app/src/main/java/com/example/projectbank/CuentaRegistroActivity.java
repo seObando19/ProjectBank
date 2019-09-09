@@ -62,7 +62,7 @@ public class CuentaRegistroActivity extends AppCompatActivity {
             
         }else
             {
-                RegistroUsuario("http://192.168.1.72:81/ProjectBankSOP/ingresaCuenta.php");
+                RegistroUsuario("http://172.18.66.187:81/ProjectBankSOP/ingresaCuenta.php");
                 limpiarcampos();
             }
     }
@@ -83,7 +83,7 @@ public class CuentaRegistroActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(CuentaRegistroActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+                 Toast.makeText(CuentaRegistroActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
 
             }
         })

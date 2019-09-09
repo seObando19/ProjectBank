@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
 public class iniciarSesionActivity extends AppCompatActivity  {
 
     TextView user,saldo;
@@ -22,9 +24,8 @@ public class iniciarSesionActivity extends AppCompatActivity  {
         btnCuentas=findViewById(R.id.btnCuenta);
         btnTrans=findViewById(R.id.btnTransaccion);
 
-        usuarios Usuario = new usuarios();
-        Usuario.setNombres("Hola");
-        user.setText(Usuario.getNombres());
+        //  String nombre = getIntent().getStringExtra("user");
+        //user.setText(nombre);
 
 
         btnCuentas.setOnClickListener(new View.OnClickListener() {
