@@ -6,6 +6,7 @@ public class usuarios {
     private String email;
     private String clave;
 
+
     public usuarios() {
     }
 

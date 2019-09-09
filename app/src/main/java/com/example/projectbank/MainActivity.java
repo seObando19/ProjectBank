@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+                Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
         String TextIdent=ident.getText().toString();
         String TextPass=pass.getText().toString();
-        String url="http://172.16.22.4:8081/ProjectBankSOP/sesion.php?ident=" + TextIdent + "&clave=" +TextPass;
+        //cesde
+        //String url="http://172.18.82.90:81/ProjectBankSOP/sesion.php?ident=" + TextIdent + "&clave=" +TextPass;
+        //casa
+        String url="http://192.168.1.72:81/ProjectBankSOP/sesion.php?ident=" + TextIdent + "&clave=" +TextPass;
 
         jrq = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);

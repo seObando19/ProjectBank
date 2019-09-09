@@ -11,9 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".iniciarSesionActivity"></activity>
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".ActivityRegistro" />
+        <activity android:name=".CuentaRegistroActivity"></activity>
+        <activity android:name=".TransferenciasActivity" />
+        <activity android:name=".CuentasActivity" />
+        <activity android:name=".iniciarSesionActivity" />
+        <activity android:name=".RegistroActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

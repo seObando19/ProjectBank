@@ -19,7 +19,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main3Activity extends AppCompatActivity {
+public class RegistroActivity extends AppCompatActivity {
     TextView nomb,email,pass,ident;
     Button btnregistro;
     @Override
@@ -49,10 +49,13 @@ public class Main3Activity extends AppCompatActivity {
 
         if(identE.isEmpty() || nombE.isEmpty() || emailE.isEmpty() || passE.isEmpty())
         {
-            Toast.makeText(Main3Activity.this, "Campos obligatorios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegistroActivity.this, "Campos obligatorios", Toast.LENGTH_SHORT).show();
         }else
             {
-                RegistroUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresa.php");
+                //cesde
+                //RegistroUsuario("http://172.18.82.90:81/ProjectBankSOP/ingresa.php");
+                //casa
+                RegistroUsuario("http://192.168.1.72:81/ProjectBankSOP/ingresa.php");
                 limpiarcampos();
             }
     }
@@ -77,7 +80,7 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                Toast.makeText(Main3Activity.this, "Registro de usuario exitoso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroActivity.this, "Registro de usuario exitoso", Toast.LENGTH_SHORT).show();
                 finish();
 
             }
@@ -85,7 +88,7 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
 
             }
         })
