@@ -55,7 +55,7 @@ public class RegistroActivity extends AppCompatActivity {
                 //cesde
                 //RegistroUsuario("http://172.18.82.90:81/ProjectBankSOP/ingresa.php");
                 //casa
-                RegistroUsuario("http://172.18.66.187:81/ProjectBankSOP/ingresa.php");
+                RegistroUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresa.php");
                 limpiarcampos();
             }
     }

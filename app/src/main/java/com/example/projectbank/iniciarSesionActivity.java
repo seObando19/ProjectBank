@@ -24,8 +24,8 @@ public class iniciarSesionActivity extends AppCompatActivity  {
         btnCuentas=findViewById(R.id.btnCuenta);
         btnTrans=findViewById(R.id.btnTransaccion);
 
-        //  String nombre = getIntent().getStringExtra("user");
-        //user.setText(nombre);
+        String nombre = getIntent().getStringExtra("user");
+        user.setText(nombre);
 
 
         btnCuentas.setOnClickListener(new View.OnClickListener() {

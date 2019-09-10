@@ -62,7 +62,7 @@ public class CuentaRegistroActivity extends AppCompatActivity {
             
         }else
             {
-                RegistroUsuario("http://172.18.66.187:81/ProjectBankSOP/ingresaCuenta.php");
+                RegistroUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresaCuenta.php");
                 limpiarcampos();
             }
     }

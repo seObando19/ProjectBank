@@ -52,7 +52,7 @@ public class TransferenciasActivity extends AppCompatActivity {
             Toast.makeText(this,"Campos obligatorios",Toast.LENGTH_LONG).show();
         }else
             {
-                RegistrarUsuario("http://172.18.66.187:81/ProjectBankSOP/ingresaCuenta.php");
+                RegistrarUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresaTransaccion.php");
                 limpiarDatos();
             }
     }
@@ -65,7 +65,7 @@ public class TransferenciasActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, s, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(TransferenciasActivity.this, "Registro de usuario exitoso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TransferenciasActivity.this, "Transaccion exitoso", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }, new Response.ErrorListener() {

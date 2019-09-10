@@ -9,8 +9,8 @@ $valor=$_POST['valor'];
 $cnx =  mysqli_connect("localhost","root","","bd_projectbank") or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
 //Saldo actualde cuenta origen y destino
-$resultOrigen = mysqli_query($cnx,"select saldo from cuenta where nrocuentaorigen = '$nrocuentaorigen'");
-$resultDestino = mysqli_query($cnx,"select saldo from cuenta where nrocuentaorigen = '$nrocuentaorigen'");
+$resultOrigen = mysqli_query($cnx,"select saldo from cuenta where nrocuenta = '$nrocuentaorigen'");
+$resultDestino = mysqli_query($cnx,"select saldo from cuenta where nrocuenta = '$nrocuentaorigen'");
 
 //Validar i la consulta si trae data
 if ($resultOrigen->num_rows && $resultDestino->num_rows)

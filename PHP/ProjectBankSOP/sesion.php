@@ -5,7 +5,8 @@
 	{
 		$ident=$_REQUEST['ident'];
 		$clave=$_REQUEST['clave'];
-		$registros=$cnx->query("select ident,email,clave,nombres from cliente where ident = '$ident' and clave = '$clave'");		
+		//$registros=$cnx->query("select ident,email,clave,nombres from cliente where ident = '$ident' and clave = '$clave'");		
+		$registros=$cnx->query("select ident,email,clave,nombres from cliente  where ident = '$ident' and clave = '$clave'");		
 		$json = array();
 		foreach ($registros as $fila) 
 		{
