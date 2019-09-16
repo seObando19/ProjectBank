@@ -52,10 +52,7 @@ public class RegistroActivity extends AppCompatActivity {
             Toast.makeText(RegistroActivity.this, "Campos obligatorios", Toast.LENGTH_SHORT).show();
         }else
             {
-                //cesde
-                //RegistroUsuario("http://172.18.82.90:81/ProjectBankSOP/ingresa.php");
-                //casa
-                RegistroUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresa.php");
+                RegistroUsuario("http://192.168.1.62:81/ProjectBankSOP/ingresa.php");
                 limpiarcampos();
             }
     }

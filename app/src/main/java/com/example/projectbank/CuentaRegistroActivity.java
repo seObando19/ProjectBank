@@ -31,10 +31,11 @@ public class CuentaRegistroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cuenta_registro);
         
         nroCuneta=findViewById(R.id.etNrocuenta);
-        ident=findViewById(R.id.etIdentificacion);
+        //ident=findViewById(R.id.etIdentificacion);
         saldo=findViewById(R.id.etsaldoadd);
         addAccount=findViewById(R.id.btnNuevaCuenta);
         Cancel=findViewById(R.id.btnCancelar);
+
         
         addAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,23 +54,23 @@ public class CuentaRegistroActivity extends AppCompatActivity {
     private void validarRegistro() {
         
         final String cuenta=nroCuneta.getText().toString();
-        final String identificacion=ident.getText().toString();
+        final String ident=getIntent().getStringExtra("id");
         final String sald=saldo.getText().toString();
         
-        if (cuenta.isEmpty() || identificacion.isEmpty() || sald.isEmpty())
+        if (cuenta.isEmpty() || ident.isEmpty() || sald.isEmpty())
         {
             Toast.makeText(this,"Campos obligatorios",Toast.LENGTH_LONG).show();
             
         }else
             {
-                RegistroUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresaCuenta.php");
+                RegistroUsuario("http://192.168.1.62:81/ProjectBankSOP/ingresaCuenta.php");
                 limpiarcampos();
             }
     }
 
     private void RegistroUsuario(String s) {
         final String cuenta=nroCuneta.getText().toString();
-        final String identificacion=ident.getText().toString();
+        final String identificacion=getIntent().getStringExtra("id");
         final String sald=saldo.getText().toString();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, s, new Response.Listener<String>() {
@@ -104,7 +105,6 @@ public class CuentaRegistroActivity extends AppCompatActivity {
 
     private void limpiarcampos() {
         nroCuneta.setText("");
-        ident.setText("");
         saldo.setText("");        
     }
 }

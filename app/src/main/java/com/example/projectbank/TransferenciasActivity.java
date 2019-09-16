@@ -52,7 +52,7 @@ public class TransferenciasActivity extends AppCompatActivity {
             Toast.makeText(this,"Campos obligatorios",Toast.LENGTH_LONG).show();
         }else
             {
-                RegistrarUsuario("http://172.16.22.4:8081/ProjectBankSOP/ingresaTransaccion.php");
+                RegistrarUsuario("http://192.168.1.62:81/ProjectBankSOP/ingresaTransaccion.php");
                 limpiarDatos();
             }
     }

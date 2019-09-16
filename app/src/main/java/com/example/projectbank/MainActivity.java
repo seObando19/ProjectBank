@@ -61,10 +61,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
         String TextIdent=ident.getText().toString();
         String TextPass=pass.getText().toString();
-        //cesde
-        //String url="http://172.18.82.90:81/ProjectBankSOP/sesion.php?ident=" + TextIdent + "&clave=" +TextPass;
-        //casa
-        String url="http://172.16.22.4:8081/ProjectBankSOP/sesion.php?ident=" + TextIdent + "&clave=" +TextPass;
+        String url="http://192.168.1.62:81/ProjectBankSOP/sesion.php?ident=" + TextIdent + "&clave=" +TextPass;
 
         jrq = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);
@@ -106,8 +103,13 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
                 e.printStackTrace();
         }
         Intent intent = new Intent(MainActivity.this,iniciarSesionActivity.class);
-        String valor=Usuario.getNombres();
-        intent.putExtra("user",valor);
+        String nom=Usuario.getNombres();
+        String id=Usuario.getIdent();
+        String mail=Usuario.getEmail();
+
+        intent.putExtra("user",nom);
+        intent.putExtra("id",id);
+        intent.putExtra("mail",mail);
         startActivity(intent);
         finish();
     }

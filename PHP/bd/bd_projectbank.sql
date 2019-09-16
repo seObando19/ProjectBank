@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2019 a las 04:21:59
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.2.12
+-- Tiempo de generación: 16-09-2019 a las 18:28:38
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,8 +41,7 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`ident`, `nombres`, `email`, `clave`) VALUES
 ('001', 'sebastian', 'sebastim123@hotmail.com', '123'),
-('002', 'sebastian', 'sebastiano-10@hotmail.com', '123'),
-('003', 'Andres felipe', 'sfa123@hotmail.com', '123');
+('002', 'Juan felipe', 'jfs123@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -62,8 +61,10 @@ CREATE TABLE `cuenta` (
 --
 
 INSERT INTO `cuenta` (`nrocuenta`, `ident`, `fecha`, `saldo`) VALUES
-(100001, '001', '2019-09-10 00:22:23', 442000),
-(111111, '002', '2019-09-10 00:22:23', 448000);
+(1001, '001', '2019-09-16 16:06:42', 35000),
+(1002, '001', '2019-09-16 16:06:42', 55000),
+(1003, '002', '2019-09-16 16:27:20', 26000),
+(1004, '002', '2019-09-16 16:27:20', 34000);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ CREATE TABLE `transaccion` (
 --
 
 INSERT INTO `transaccion` (`nrotransacc`, `nrocuentaorigen`, `nrocuentadestino`, `fecha`, `valor`) VALUES
-(2, 100001, '1', '2019-09-10 00:22:23', 3000);
+(1, 1001, '1002', '2019-09-16 16:06:42', 10000),
+(2, 1003, '1004', '2019-09-16 16:27:20', 4000);
 
 --
 -- Índices para tablas volcadas
@@ -101,8 +103,7 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `cuenta`
   ADD PRIMARY KEY (`nrocuenta`),
-  ADD UNIQUE KEY `ident` (`ident`),
-  ADD KEY `ident_2` (`ident`);
+  ADD KEY `ident` (`ident`);
 
 --
 -- Indices de la tabla `transaccion`
@@ -119,7 +120,7 @@ ALTER TABLE `transaccion`
 -- AUTO_INCREMENT de la tabla `cuenta`
 --
 ALTER TABLE `cuenta`
-  MODIFY `nrocuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111112;
+  MODIFY `nrocuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 
 --
 -- AUTO_INCREMENT de la tabla `transaccion`

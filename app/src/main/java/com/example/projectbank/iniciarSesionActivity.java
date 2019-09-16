@@ -13,25 +13,38 @@ import org.json.JSONObject;
 public class iniciarSesionActivity extends AppCompatActivity  {
 
     TextView user,saldo;
-    Button btnCuentas,btnTrans;
+    Button btnCuentas,btnTrans,btnInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
         user=findViewById(R.id.tvUsuario);
-        saldo=findViewById(R.id.tvsaldo);
         btnCuentas=findViewById(R.id.btnCuenta);
         btnTrans=findViewById(R.id.btnTransaccion);
+        btnInfo=findViewById(R.id.btninfoUsuario);
+         final String nombre = getIntent().getStringExtra("user");
+         final String ident = getIntent().getStringExtra("id");
+         final  String mail = getIntent().getStringExtra("mail");
 
-        String nombre = getIntent().getStringExtra("user");
         user.setText(nombre);
 
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent info = new Intent(iniciarSesionActivity.this,InforClienteActivity.class);
+                info.putExtra("user",nombre);
+                info.putExtra("id",ident);
+                info.putExtra("mail",mail);
+                startActivity(info);
+            }
+        });
 
         btnCuentas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent cuenta = new Intent(iniciarSesionActivity.this,CuentasActivity.class);
+                Intent cuenta = new Intent(iniciarSesionActivity.this,CuentaRegistroActivity.class);
+                cuenta.putExtra("id",ident);
                 startActivity(cuenta);
             }
         });
